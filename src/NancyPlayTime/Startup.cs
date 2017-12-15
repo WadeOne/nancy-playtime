@@ -21,11 +21,6 @@ namespace NancyPlayTime
             app.UseMiddleware<CorrelationIdMiddleware>();
             app.UseOwin(buildFunc =>
             {
-//                buildFunc(next => ctx =>
-//                {
-//                    Console.WriteLine("got requets");
-//                    return next(ctx);
-//                });
                 buildFunc.UseNancy();
             });
         }

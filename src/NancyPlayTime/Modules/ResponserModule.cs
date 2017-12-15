@@ -9,7 +9,7 @@ namespace NancyPlayTime.Modules
     public class ResponserModule : NancyModule
     {
         private readonly ILogger _logger = new ConsoleLogger();
-        public ResponserModule()
+        public ResponserModule() : base("/api")
         {
             Before += ctx =>
             {
@@ -20,7 +20,7 @@ namespace NancyPlayTime.Modules
 
 //            After += ctx => _logger.LogInfo("Request ended");
             
-            Get("id", _ => "value");
+            Get("/id", _ => "value");
             
             Get("/give/back/{something?}", parameters => parameters.something);
             
